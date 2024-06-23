@@ -1,7 +1,52 @@
-*{
-    margin: 0;
-    padding: 0;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 body{
-    background-color: aquamarine;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #666666;
+}
+h2{
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+.active, .btn-primary{
+    border: 2px solid #00adc1 !important;
+    background-color: #00adc1 !important;
+}
+
+.active:hover, .btn-primary:hover{
+    background-color: white !important;
+    color: #00adc1 !important;
+}
+
+.btn-secondary{
+    border: 1px solid #666666 !important;
+    background-color: #eaeaea !important;
+    color: #666666 !important;
+}
+
+.btn-secondary:hover{
+    border: 1px solid #666666 !important;
+    background-color: #666666 !important;
+    color: white !important;
+}
+
+a{
+    text-decoration: none;
+}
+#footer{
+    background: url('https://www.gba.gob.ar/imagenes/imagen_footer2.png');
+    border: 0px;
+    background-repeat: repeat-x;
+    background-size: 1500px;
+    background-color: #eaeaea;
+}
+.footer-content{
+    padding: 220px 0 0 0;
+}
+.logo-footer{
+    width: 170px;
+    padding-bottom: 20px;
+}
+.row{
+    padding-top: 20px;
 }
