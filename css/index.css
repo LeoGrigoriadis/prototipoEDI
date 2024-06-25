@@ -13,7 +13,7 @@ h2, small{
     background-color: #00adc1 !important;
 }
 
-.active:hover, .btn-primary:hover{
+h1, .active:hover, .btn-primary:hover{
     background-color: white !important;
     color: #00adc1 !important;
 }
