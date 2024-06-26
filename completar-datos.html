@@ -30,7 +30,7 @@
             </a>
             <ul class="nav nav-pills col-12 col-md-9 py-5 py-md-0 justify-content-center justify-content-md-end">
               <li class="nav-item d-flex align-items-center">
-                <a class="nav-link rounded-1 active" aria-current="page" href="#">Reservá un turno</a>
+                <a class="nav-link rounded-1 active" aria-current="page" href="completar-datos.html">Reservá un turno</a>
               </li>
             </ul>
           </div>
@@ -44,14 +44,14 @@
         <div class="m-auto col-lg-7">
           <div class="pt-4 px-md-5 py-md-4 input-group input-group-lg">
               <span class="input-group-text fs-6 fs-md-1" id="lbl-nombre-completo">Nombre completo</span>
-              <input type="text" class="form-control" aria-label="Sizing example input"  id="nombre-completo" aria-describedby="lbl-nombre-completo" onkeyup="return test();" maxlength="30">
+              <input type="text" class="form-control" aria-label="Sizing example input"  id="nombre-completo" aria-describedby="lbl-nombre-completo" onkeyup="return desbloquearBoton();" maxlength="30">
           </div>
           <div class="pt-4 py-md-0 px-md-5 py-md-4 input-group input-group-lg">
               <span class="input-group-text fs-6 fs-md-1" id="lbl-nro-documento">Nro. de documento</span>
-              <input type="text" class="form-control" aria-label="Sizing example input" id="nro-documento" aria-describedby="lbl-nro-documento" onkeyup="return test();" maxlength="8" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');">
+              <input type="text" class="form-control" aria-label="Sizing example input" id="nro-documento" aria-describedby="lbl-nro-documento" onkeyup="return desbloquearBoton();" maxlength="8" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');">
           </div>
           <div class="pt-4 d-flex justify-content-center">
-            <a id="btn-busqueda" href="reservar-turno.html" aria-current="page" class="btn btn-primary rounded-1 disabled"><i class="bi bi-search"></i>&nbsp;&nbsp;Buscar turnos</a>
+            <a id="btn-busqueda" href="reserva-turnos.html" onclick="return guardarInfo();" aria-current="page" class="btn btn-primary rounded-1 disabled"><i class="bi bi-search"></i>&nbsp;&nbsp;Buscar turnos disponibles</a>
           </div>
         </div>
         <br><br><br><br><br>

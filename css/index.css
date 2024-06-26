@@ -53,3 +53,14 @@ a{
 small{
     font-size: .8em;
 }
+.list-group{
+    max-height: 200px;
+    overflow-y: scroll;
+    border: 1px solid #eaeaea;
+}
+.list-group-item{
+    cursor: pointer;
+}
+.list-group-item:hover{
+    background-color: #eaeaea;
+}

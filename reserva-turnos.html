@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="icon" href="https://www.ms.gba.gov.ar/sitios/halende/wp-content/themes/MinisteriodeSaludPBA/img/favicon.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script type="text/javascript" src="js/script.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+    <title>Hospital Interzonal General de Agudos</title>
+</head>
+<body> <!--ACÁ ESTA EL BODY, TODO EL CONTENIDO SE ENCUENTRA EN ESTE BLOQUE-->
+    <nav class="navbar navbar-expand-md bg-dark sticky-top border-bottom" data-bs-theme="dark"> <!--EN ESTE BLOQUE ESTÁ TODO LO QUE SE VISUALIZA EN LA BARRA DE NAVEGACIÓN, INCLUÍDO EL MODO RESPONSIVE-->
+      <div class="container">
+        <a class="navbar-brand d-md-none" href="index.html" width="150px">
+          <img src="https://www.ms.gba.gov.ar/sitios/halende/wp-content/themes/MinisteriodeSaludPBA/img/logoMSPBA.svg" alt="logo provincia buenos aires">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
+          <div class="offcanvas-header">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <a class="col-12 col-md-3" href="index.html">
+              <img src="https://www.ms.gba.gov.ar/sitios/halende/wp-content/themes/MinisteriodeSaludPBA/img/logoMSPBA.svg" alt="logo provincia buenos aires" width="100%">
+            </a>
+            <ul class="nav nav-pills col-12 col-md-9 py-5 py-md-0 justify-content-center justify-content-md-end">
+              <li class="nav-item d-flex align-items-center">
+                <a class="nav-link rounded-1 active" aria-current="page" href="completar-datos.html">Reservá un turno</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <section class="container">
+        <div class="col-12">
+          <h1 class="pt-5 text-center">¡Hola, <span id="nombre-usuario" class="fw-bold"></span>!<br> Completa la reserva de tu turno</h1>
+        </div>
+        <div class="mt-5 d-md-flex">
+            <div class="col-12 col-md-6 pe-md-5">
+                <div class="input-group">
+                    <input id="buscador-especialidades" type="text" class="form-control" placeholder="Seleccione la especialidad..." aria-label="" aria-describedby="basic-addon2" autocomplete="off">
+                    <button class="btn btn-outline-secondary" type="button" onclick='document.getElementById("buscador-especialidades").focus();' id="button-addon2"><i class="bi bi-arrow-down-short"></i></button>
+                </div>
+                <div id="lista-especialidades" style="visibility: hidden;">
+                    <ul id="ul-lista-especialidades" class="list-group">
+                        <li value="1" class="list-group-item" onclick='return setEspecialidad(this);'>Clínica Médica</li>
+                        <li value="2" class="list-group-item" onclick='return setEspecialidad(this);'>Oncología</li>
+                        <li value="3" class="list-group-item" onclick='return setEspecialidad(this);'>Alergia e Inmunología</li>
+                        <li value="4" class="list-group-item" onclick='return setEspecialidad(this);'>Dermatología</li>
+                        <li value="5" class="list-group-item" onclick='return setEspecialidad(this);'>Reumatología</li>
+                        <li value="6" class="list-group-item" onclick='return setEspecialidad(this);'>Hepatología y Alcoholismo</li>
+                        <li value="7" class="list-group-item" onclick='return setEspecialidad(this);'>Infectología</li>
+                        <li value="8" class="list-group-item" onclick='return setEspecialidad(this);'>Nefrología y Diálisis</li>
+                        <li value="9" class="list-group-item" onclick='return setEspecialidad(this);'>Neumonología</li>
+                        <li value="10" class="list-group-item" onclick='return setEspecialidad(this);'>Gastroenterología</li>
+                        <li value="11" class="list-group-item" onclick='return setEspecialidad(this);'>Endocrinología</li>
+                        <li value="12" class="list-group-item" onclick='return setEspecialidad(this);'>Neurología</li>
+                        <li value="13" class="list-group-item" onclick='return setEspecialidad(this);'>Neurofisiología</li>
+                        <li value="14" class="list-group-item" onclick='return setEspecialidad(this);'>Hematología</li>
+                        <li value="15" class="list-group-item" onclick='return setEspecialidad(this);'>Hemoterapia</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="text-end"><strong>Horarios disponibles</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br><br><br><br>
+    </section>
+    <footer id="footer">
+      <div class="container footer-content">
+        <div class="row p-b-3 d-flex flex-column align-items-center">
+          <div class="w-auto">
+            <img class="logo-footer" src="https://www.ms.gba.gov.ar/sitios/halende/wp-content/themes/MinisteriodeSaludPBA/img/logofooter_2020.svg" alt="" srcset="">
+          </div>
+          <br>
+          <div class="w-auto">
+            <small>
+              <i>&copy; Autoría de Leonel Grigoriadis y Ramiro Martinez</i>
+            </small>
+          </div>
+          <br>
+        </div>
+      </div>
+    </footer>
+    <script type="text/javascript">
+        const nombreVal = localStorage.getItem("nombre");
+        const nombreEtiqueta = document.getElementById("nombre-usuario");
+        nombreEtiqueta.innerText = nombreVal; 
+        
+        document.getElementById('buscador-especialidades').addEventListener('focus', mostrarEspecialidades);
+        document.getElementById('buscador-especialidades').addEventListener('blur', ocultarEspecialidades);
+        
+        function mostrarEspecialidades(){
+            document.getElementById("lista-especialidades").style.visibility = "visible";
+        }
+        
+        function ocultarEspecialidades(){
+            setTimeout(function(){
+                document.getElementById("lista-especialidades").style.visibility = "hidden";
+            }, 300);
+        }
+        
+    </script>
+</body>
+</html>
