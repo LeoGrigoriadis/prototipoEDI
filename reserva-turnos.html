@@ -30,7 +30,7 @@
             </a>
             <ul class="nav nav-pills col-12 col-md-9 py-5 py-md-0 justify-content-center justify-content-md-end">
               <li class="nav-item d-flex align-items-center">
-                <a class="nav-link rounded-1 active" aria-current="page" href="completar-datos.html">Reservá un turno</a>
+                <a class="btn btn-primary rounded-1" aria-current="page" href="completar-datos.html">Iniciar sesión</a>
               </li>
             </ul>
           </div>
@@ -44,11 +44,11 @@
         <div class="mt-5 d-md-flex">
             <div class="col-12 col-md-6 pe-md-5">
                 <div class="input-group">
-                    <input id="buscador-especialidades" type="text" class="form-control" placeholder="Seleccione la especialidad..." aria-label="" aria-describedby="basic-addon2" autocomplete="off">
+                    <input id="buscador-especialidades" type="text" class="form-control" onkeyup="return filtrar(this);" placeholder="Seleccione la especialidad aquí..." autocomplete="off">
                     <button class="btn btn-outline-secondary" type="button" onclick='document.getElementById("buscador-especialidades").focus();' id="button-addon2"><i class="bi bi-arrow-down-short"></i></button>
                 </div>
-                <div id="lista-especialidades" style="visibility: hidden;">
-                    <ul id="ul-lista-especialidades" class="list-group">
+                <div id="lista-especialidades" style="display: none;">
+                    <ul id="ul-lista-especialidades" class="list-group rounded-0">
                         <li value="1" class="list-group-item" onclick='return setEspecialidad(this);'>Clínica Médica</li>
                         <li value="2" class="list-group-item" onclick='return setEspecialidad(this);'>Oncología</li>
                         <li value="3" class="list-group-item" onclick='return setEspecialidad(this);'>Alergia e Inmunología</li>
@@ -66,16 +66,57 @@
                         <li value="15" class="list-group-item" onclick='return setEspecialidad(this);'>Hemoterapia</li>
                     </ul>
                 </div>
+                <div id="bloque-descripcion" style="display: none;" class="card mt-4">
+                  <div id="estilo-descripcion" class="card-body">
+                    <i id="texto-descriptivo"></i>
+                  </div>
+                </div>
             </div>
             <div class="col-12 col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        <p class="text-end"><strong>Horarios disponibles</strong></p>
+                      <div>
+                        <p class="text-end me-2"><strong>Seleccione día y horario</strong></p>
+                      </div>
+                      <p class="ms-2">Día:</p>
+                      <div class="d-flex flex-wrap mx-2">
+                        <button class="btn btn-secondary me-2 mb-2" onclick="return activeDay(this);" type="submit">26-06</button>
+                        <button class="btn btn-secondary me-2 mb-2" onclick="return activeDay(this);" type="submit">27-06</button>
+                        <button class="btn btn-secondary me-2 mb-2" onclick="return activeDay(this);" type="submit">28-06</button>
+                        <button class="btn btn-secondary me-2 mb-2" onclick="return activeDay(this);" type="submit">29-06</button>
+                        <button class="btn btn-secondary me-2 mb-2" onclick="return activeDay(this);" type="submit">30-06</button>
+                        <button class="btn btn-secondary me-2 mb-2" onclick="return activeDay(this);" type="submit">01-07</button>
+                        <button class="btn btn-secondary me-2 mb-2" onclick="return activeDay(this);" type="submit">02-07</button>
+                        <button class="btn btn-secondary me-2 mb-2" onclick="return activeDay(this);" type="submit">03-07</button>
+                      </div>
+                      <p class="ms-2 mt-3">Hora:</p>
+                      <div class="d-flex flex-wrap mx-2">
+                        <button class="btn btn-secondary me-2 mb-2 disabled" type="submit">7:00</button>
+                        <button class="btn btn-secondary me-2 mb-2 disabled" type="submit">7:30</button>
+                        <button class="btn btn-secondary me-2 mb-2 disabled" type="submit">8:00</button>
+                        <button class="btn btn-secondary me-2 mb-2 disabled" type="submit">8:30</button>
+                        <button class="btn btn-secondary me-2 mb-2" onclick="return active(this);" type="submit">9:00</button>
+                        <button class="btn btn-secondary me-2 mb-2 disabled" type="submit">9:30</button>
+                        <button class="btn btn-secondary me-2 mb-2" onclick="return active(this);" type="submit">10:00</button>
+                        <button class="btn btn-secondary me-2 mb-2" onclick="return active(this);" type="submit">10:30</button>
+                        <button class="btn btn-secondary me-2 mb-2 disabled" type="submit">11:00</button>
+                        <button class="btn btn-secondary me-2 mb-2" onclick="return active(this);" type="submit">11:30</button>
+                        <button class="btn btn-secondary me-2 mb-2" onclick="return active(this);" type="submit">12:00</button>
+                        <button class="btn btn-secondary me-2 mb-2 disabled" type="submit">12:30</button>
+                        <button class="btn btn-secondary me-2 mb-2" onclick="return active(this);" type="submit">13:00</button>
+                        <button class="btn btn-secondary me-2 mb-2" onclick="return active(this);" type="submit">13:30</button>
+                        <button class="btn btn-secondary me-2 mb-2" onclick="return active(this);" type="submit">14:00</button>
+                        <button class="btn btn-secondary me-2 mb-2" onclick="return active(this);" type="submit">14:30</button>
+                        <button class="btn btn-secondary me-2 mb-2" onclick="return active(this);" type="submit">15:00</button>
+                        <button class="btn btn-secondary me-2 mb-2 disabled" onclick="return active(this);" type="submit">15:30</button>
+                        <button class="btn btn-secondary me-2 mb-2" onclick="return active(this);" type="submit">16:00</button>
+                      </div>
+                      <a id="boton-confirmar" class="btn btn-primary rounded-1 mt-3 mb-1 m-2 float-end disabled" aria-current="page" href="confirmacion.html">Confirmar turno</a>
                     </div>
                 </div>
             </div>
         </div>
-        <br><br><br><br><br>
+        <br><br><br><br>
     </section>
     <footer id="footer">
       <div class="container footer-content">
@@ -102,12 +143,13 @@
         document.getElementById('buscador-especialidades').addEventListener('blur', ocultarEspecialidades);
         
         function mostrarEspecialidades(){
-            document.getElementById("lista-especialidades").style.visibility = "visible";
+            document.getElementById("lista-especialidades").style.display = "block";
+            filtrar(document.getElementById("buscador-especialidades"));
         }
         
         function ocultarEspecialidades(){
             setTimeout(function(){
-                document.getElementById("lista-especialidades").style.visibility = "hidden";
+                document.getElementById("lista-especialidades").style.display = "none";
             }, 300);
         }
         

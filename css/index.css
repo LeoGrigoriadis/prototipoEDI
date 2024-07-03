@@ -55,7 +55,7 @@ small{
 }
 .list-group{
     max-height: 200px;
-    overflow-y: scroll;
+    overflow-y: auto;
     border: 1px solid #eaeaea;
 }
 .list-group-item{
@@ -63,4 +63,24 @@ small{
 }
 .list-group-item:hover{
     background-color: #eaeaea;
+}
+.active, .active-day{
+    background-color: #00adc1 !important;
+    border: 1px solid #00adc1 !important;
+    color: white !important;
+}
+.active:hover, .active-day:hover{
+    background-color: #00cbe1 !important;
+    border: 1px solid #00cbe1 !important;
+}
+#lista-especialidades{
+    position: relative;
+}
+#ul-lista-especialidades{
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+#estilo-descripcion{
+    color: #666666;
 }

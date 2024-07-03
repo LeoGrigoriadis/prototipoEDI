@@ -7,7 +7,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link rel="icon" href="https://www.ms.gba.gov.ar/sitios/halende/wp-content/themes/MinisteriodeSaludPBA/img/favicon.ico">
     <script type="text/javascript" src="js/script.js"></script>
-    <script type="text/javascript"> localStorage.clear(); </script> <!--Elimino las variables de sesión para evitar problemas-->
     <link rel="stylesheet" href="css/index.css">
     <title>Hospital Interzonal General de Agudos</title>
 </head>
@@ -38,25 +37,17 @@
       </div>
     </nav>
     <section class="container">
-      <div class="py-md-5 px-0 py-5">
-        <br><br>
-        <h2>Hospital Interzonal General de Agudos "Dr. Oscar Alende"</h2>
-        <p>destinado al diagnóstico, tratamiento y prevención de enfermedades de comienzo brusco y/o evolución breve.</p>
-        <br>
-        <div class="row">
-          <div class="col-6">
-            <p>Accedé de manera <strong>fácil y rápida</strong> a la atención médica que necesitas.</p>
-            <a href="completar-datos.html" aria-current="page" class="btn btn-primary rounded-1">Reservá un turno</a>
-          </div>
-          <div class="col-6 d-flex flex-column align-items-end">
-            <p>¿Preferís contactarte por otros medios?</p>
-            <a class="btn btn-secondary rounded-1" href="https://www.ms.gba.gov.ar/sitios/halende/contacto/">
-              Contactate
-            </a>
-          </div>
-        </div>
-        <br><br><br>
+      <div class="col-12">
+        <h1 class="pt-5 text-center">¡Turno registrado con éxito!</h1>
       </div>
+      <div class="col-12 d-flex pt-5 justify-content-center">
+        <p>Tu turno a sido registrado para la especialdad <strong id="especialidad-usuario"></strong> a nombre de <strong id="nombre-usuario"></strong> con documento <strong id="documento-usuario"></strong>. <br>
+        Número de turno: <strong>#15621</strong><br>
+        Fecha: <strong id="dia"></strong> <strong id="fecha"></strong>
+        </p>
+      </div>
+      <br><br><br><br><br>
+
     </section>
     <footer id="footer">
       <div class="container footer-content">
@@ -75,5 +66,45 @@
         </div>
       </div>
     </footer>
+    <script type="text/javascript">
+      const nombre = localStorage.getItem("nombre");
+      const documento = localStorage.getItem("documento");
+      const especialidad = localStorage.getItem("especialidad-elegida");
+      const dia = localStorage.getItem("dia");
+      const hora = localStorage.getItem("hora");
+      
+      const lblNombre = document.getElementById("nombre-usuario");
+      const lblDocumento = document.getElementById("documento-usuario");
+      const lblEspecialidad = document.getElementById("especialidad-usuario");
+      const lblDia = document.getElementById("dia");
+      const lblHora = document.getElementById("fecha");
+      
+      let nombreEspecialidad = "";
+      
+      switch(parseInt(especialidad)){
+        case 1: nombreEspecialidad = "Clínica Médica"; break;
+        case 1: nombreEspecialidad = "Oncología"; break;
+        case 1: nombreEspecialidad = "Alergia e Inmunología"; break;
+        case 1: nombreEspecialidad = "Dermatología"; break;
+        case 1: nombreEspecialidad = "Reumatología"; break;
+        case 1: nombreEspecialidad = "Hepatología y Alcoholismo"; break;
+        case 1: nombreEspecialidad = "Infectología"; break;
+        case 1: nombreEspecialidad = "Nefrología y Diálisis"; break;
+        case 1: nombreEspecialidad = "Neumonología"; break;
+        case 1: nombreEspecialidad = "Gastroenterología"; break;
+        case 1: nombreEspecialidad = "Endocrinología"; break;
+        case 1: nombreEspecialidad = "Neurología"; break;
+        case 1: nombreEspecialidad = "Neurofisiología"; break;
+        case 1: nombreEspecialidad = "Hematología"; break;
+        case 1: nombreEspecialidad = "Hemoterapia"; break;
+      }
+
+      lblNombre.innerHTML = nombre;
+      lblDocumento.innerHTML = documento;
+      lblEspecialidad.innerHTML = nombreEspecialidad;
+      lblDia.innerHTML = dia;
+      lblHora.innerHTML = hora;
+
+    </script>
 </body>
 </html>
