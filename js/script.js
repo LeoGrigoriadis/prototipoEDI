@@ -63,9 +63,9 @@ function active(htmlElement){
     for (let i = 0; i < elementos.length; i++) {
         const element = elementos[i];
         element.classList.remove("active");
-        localStorage.setItem("hora", element.textContent);
     }
     
+    localStorage.setItem("hora", htmlElement.textContent);
     htmlElement.classList.add("active");
     checkConfirmar();
 }
@@ -76,9 +76,9 @@ function activeDay(htmlElement){
     for (let i = 0; i < elementos.length; i++) {
         const element = elementos[i];
         element.classList.remove("active-day");
-        localStorage.setItem("dia", element.textContent);
     }
     
+    localStorage.setItem("dia", htmlElement.textContent);
     htmlElement.classList.add("active-day");
     checkConfirmar();
 }
