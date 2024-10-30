@@ -7,10 +7,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link rel="icon" href="https://www.ms.gba.gov.ar/sitios/halende/wp-content/themes/MinisteriodeSaludPBA/img/favicon.ico">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <script type="text/javascript" src="js/script.js"></script>
     <link rel="stylesheet" href="css/index.css">
     <title>Hospital Interzonal General de Agudos</title>
-</head>
+  </head>
 <body> <!--ACÁ ESTA EL BODY, TODO EL CONTENIDO SE ENCUENTRA EN ESTE BLOQUE-->
     <nav class="navbar navbar-expand-md bg-dark sticky-top border-bottom" data-bs-theme="dark"> <!--EN ESTE BLOQUE ESTÁ TODO LO QUE SE VISUALIZA EN LA BARRA DE NAVEGACIÓN, INCLUÍDO EL MODO RESPONSIVE-->
       <div class="container">
@@ -44,26 +43,26 @@
         <div class="mt-5 d-md-flex">
             <div class="col-12 col-md-6 pe-md-5">
                 <div class="input-group">
-                    <input id="buscador-especialidades" type="text" class="form-control" onkeyup="return filtrar(this);" placeholder="Seleccione la especialidad aquí..." autocomplete="off">
+                  <input id="buscador-especialidades" type="text" class="form-control" onkeyup="return filtrar(this);" placeholder="Seleccione la especialidad aquí..." autocomplete="off">
                     <button class="btn btn-outline-secondary" type="button" onclick='document.getElementById("buscador-especialidades").focus();' id="button-addon2"><i class="bi bi-arrow-down-short"></i></button>
-                </div>
+                  </div>
                 <div id="lista-especialidades" style="display: none;">
                     <ul id="ul-lista-especialidades" class="list-group rounded-0">
-                        <li value="1" class="list-group-item" onclick='return setEspecialidad(this);'>Clínica Médica</li>
-                        <li value="2" class="list-group-item" onclick='return setEspecialidad(this);'>Oncología</li>
-                        <li value="3" class="list-group-item" onclick='return setEspecialidad(this);'>Alergia e Inmunología</li>
-                        <li value="4" class="list-group-item" onclick='return setEspecialidad(this);'>Dermatología</li>
-                        <li value="5" class="list-group-item" onclick='return setEspecialidad(this);'>Reumatología</li>
-                        <li value="6" class="list-group-item" onclick='return setEspecialidad(this);'>Hepatología y Alcoholismo</li>
-                        <li value="7" class="list-group-item" onclick='return setEspecialidad(this);'>Infectología</li>
-                        <li value="8" class="list-group-item" onclick='return setEspecialidad(this);'>Nefrología y Diálisis</li>
-                        <li value="9" class="list-group-item" onclick='return setEspecialidad(this);'>Neumonología</li>
-                        <li value="10" class="list-group-item" onclick='return setEspecialidad(this);'>Gastroenterología</li>
-                        <li value="11" class="list-group-item" onclick='return setEspecialidad(this);'>Endocrinología</li>
-                        <li value="12" class="list-group-item" onclick='return setEspecialidad(this);'>Neurología</li>
-                        <li value="13" class="list-group-item" onclick='return setEspecialidad(this);'>Neurofisiología</li>
-                        <li value="14" class="list-group-item" onclick='return setEspecialidad(this);'>Hematología</li>
-                        <li value="15" class="list-group-item" onclick='return setEspecialidad(this);'>Hemoterapia</li>
+                        <li value="0" class="list-group-item" onclick='return setEspecialidad(this);'>Clínica Médica</li>
+                        <li value="1" class="list-group-item" onclick='return setEspecialidad(this);'>Oncología</li>
+                        <li value="2" class="list-group-item" onclick='return setEspecialidad(this);'>Alergia e Inmunología</li>
+                        <li value="3" class="list-group-item" onclick='return setEspecialidad(this);'>Dermatología</li>
+                        <li value="4" class="list-group-item" onclick='return setEspecialidad(this);'>Reumatología</li>
+                        <li value="5" class="list-group-item" onclick='return setEspecialidad(this);'>Hepatología y Alcoholismo</li>
+                        <li value="6" class="list-group-item" onclick='return setEspecialidad(this);'>Infectología</li>
+                        <li value="7" class="list-group-item" onclick='return setEspecialidad(this);'>Nefrología y Diálisis</li>
+                        <li value="8" class="list-group-item" onclick='return setEspecialidad(this);'>Neumonología</li>
+                        <li value="9" class="list-group-item" onclick='return setEspecialidad(this);'>Gastroenterología</li>
+                        <li value="10" class="list-group-item" onclick='return setEspecialidad(this);'>Endocrinología</li>
+                        <li value="11" class="list-group-item" onclick='return setEspecialidad(this);'>Neurología</li>
+                        <li value="12" class="list-group-item" onclick='return setEspecialidad(this);'>Neurofisiología</li>
+                        <li value="13" class="list-group-item" onclick='return setEspecialidad(this);'>Hematología</li>
+                        <li value="14" class="list-group-item" onclick='return setEspecialidad(this);'>Hemoterapia</li>
                     </ul>
                 </div>
                 <div id="bloque-descripcion" style="display: none;" class="card mt-4">
@@ -134,6 +133,7 @@
         </div>
       </div>
     </footer>
+    <script type="text/javascript" src="js/script.js"></script>
     <script type="text/javascript">
         const nombreVal = localStorage.getItem("nombre");
         const nombreEtiqueta = document.getElementById("nombre-usuario");
@@ -141,18 +141,6 @@
         
         document.getElementById('buscador-especialidades').addEventListener('focus', mostrarEspecialidades);
         document.getElementById('buscador-especialidades').addEventListener('blur', ocultarEspecialidades);
-        
-        function mostrarEspecialidades(){
-            document.getElementById("lista-especialidades").style.display = "block";
-            filtrar(document.getElementById("buscador-especialidades"));
-        }
-        
-        function ocultarEspecialidades(){
-            setTimeout(function(){
-                document.getElementById("lista-especialidades").style.display = "none";
-            }, 300);
-        }
-        
     </script>
 </body>
 </html>

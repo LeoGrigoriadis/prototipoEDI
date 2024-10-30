@@ -30,6 +30,10 @@ h1, .active:hover, .btn-primary:hover{
     color: white !important;
 }
 
+.btn-outline-secondary{
+    font-size: 0.9em;
+}
+
 a{
     text-decoration: none;
 }

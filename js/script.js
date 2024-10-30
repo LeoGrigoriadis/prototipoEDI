@@ -1,3 +1,22 @@
+let especialidades = ["Clínica Médica","Oncología","Alergia e Inmunología","Dermatología","Reumatología","Hepatología y Alcoholismo","Infectología","Nefrología y Diálisis","Neumonología","Gastroenterología","Endocrinología","Neurología","Neurofisiología","Hematología","Hemoterapia"];
+let descripciones = [
+    "Ofrecemos atención integral para diagnóstico y tratamiento de diversas enfermedades agudas y crónicas, brindando cuidados personalizados y seguimiento continuo.",
+    "Proporcionamos diagnóstico, tratamiento y apoyo para pacientes con cáncer, utilizando las últimas tecnologías y enfoques terapéuticos para mejorar la calidad de vida.",
+    "Especialistas en el diagnóstico y tratamiento de alergias y trastornos del sistema inmunológico, ofreciendo terapias personalizadas para mejorar la salud y bienestar.",
+    "Cuidamos de tu piel, cabello y uñas, tratando desde condiciones comunes hasta enfermedades complejas con un enfoque especializado y actualizado.",
+    "Brindamos atención integral para enfermedades reumáticas y autoinmunes, con tratamientos avanzados para mejorar la movilidad y calidad de vida de nuestros pacientes.",
+    "Atención integral para enfermedades hepáticas y tratamiento del alcoholismo, brindando diagnóstico, terapia y apoyo para mejorar la salud del hígado y facilitar la recuperación de los pacientes.",
+    "Diagnóstico y tratamiento de enfermedades infecciosas, brindando atención especializada para prevenir y controlar infecciones complejas.",
+    "Atención integral para enfermedades renales y tratamientos de diálisis, promoviendo una mejor calidad de vida en pacientes con afecciones renales crónicas.",
+    "Evaluación y tratamiento de enfermedades respiratorias, como asma y EPOC, con un enfoque personalizado para mejorar la función pulmonar.",
+    "Diagnóstico y tratamiento de trastornos digestivos, ofreciendo un enfoque integral para mejorar la salud y el bienestar digestivo.",
+    "Atención especializada en enfermedades hormonales y metabólicas, brindando tratamientos personalizados para el control de diabetes, tiroides y otros trastornos.",
+    "Diagnóstico y tratamiento de trastornos del sistema nervioso, con enfoque especializado en la salud cerebral y el bienestar neurológico.",
+    "Estudios y diagnósticos de función nerviosa y muscular, utilizando técnicas avanzadas para evaluar y tratar trastornos neuromusculares.",
+    "Diagnóstico y tratamiento de enfermedades de la sangre, como anemias y leucemias, con un enfoque en la mejora de la salud hematológica.",
+    "Servicios de transfusión y tratamiento con componentes sanguíneos, asegurando una atención segura y adecuada en terapias hemoterápicas."
+]
+
 function desbloquearBoton(){
     let nombre = document.getElementById("nombre-completo");
     let documento = document.getElementById("nro-documento");
@@ -23,17 +42,8 @@ function setEspecialidad(htmlElement){
     buscador.value = htmlElement.textContent;
 
     localStorage.setItem("especialidad-elegida", htmlElement.value);
-    let descripcion;
+    let descripcion = descripciones[htmlElement.value];
 
-    switch(htmlElement.value){
-        case 1: descripcion = "Ofrecemos atención integral para diagnóstico y tratamiento de diversas enfermedades agudas y crónicas, brindando cuidados personalizados y seguimiento continuo."; break;
-        case 2: descripcion = "Proporcionamos diagnóstico, tratamiento y apoyo para pacientes con cáncer, utilizando las últimas tecnologías y enfoques terapéuticos para mejorar la calidad de vida."; break;
-        case 3: descripcion = "Especialistas en el diagnóstico y tratamiento de alergias y trastornos del sistema inmunológico, ofreciendo terapias personalizadas para mejorar la salud y bienestar."; break;
-        case 4: descripcion = "Cuidamos de tu piel, cabello y uñas, tratando desde condiciones comunes hasta enfermedades complejas con un enfoque especializado y actualizado."; break;
-        case 5: descripcion = "Brindamos atención integral para enfermedades reumáticas y autoinmunes, con tratamientos avanzados para mejorar la movilidad y calidad de vida de nuestros pacientes."; break;
-        case 6: descripcion = "Nos especializamos en el diagnóstico y tratamiento de enfermedades del hígado, ofreciendo cuidados completos y personalizados para cada paciente."; break;
-        case 7: descripcion = "Ofrecemos programas de rehabilitación y apoyo para personas con problemas de alcoholismo, enfocados en la recuperación y reintegración social."; break;
-    }
     document.getElementById("bloque-descripcion").style.display = "block";
     document.getElementById("texto-descriptivo").innerHTML = "<strong>Especialidad: "+htmlElement.textContent+"</strong> <br>"+descripcion;
     checkConfirmar();
@@ -95,3 +105,22 @@ function checkConfirmar(){
         boton.classList.remove("disabled");
     }
 }
+        
+function mostrarEspecialidades(){
+    document.getElementById("lista-especialidades").style.display = "block";
+    filtrar(document.getElementById("buscador-especialidades"));
+}
+
+function ocultarEspecialidades(){
+    setTimeout(function(){
+        document.getElementById("lista-especialidades").style.display = "none";
+    }, 300);
+}
+
+function descargarTurno() {
+    html2canvas(document.querySelector("#a-imprimir"))
+    .then(canvas => {
+      console.log("Turno descargado con éxito")
+    return Canvas2Image.saveAsImage(canvas, null, null, "png", "img");
+    }, console.log("Error al descargar turno"));
+  };
