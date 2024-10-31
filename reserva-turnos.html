@@ -73,11 +73,11 @@
             </div>
             <div class="col-12 col-md-6">
                 <div class="card">
-                    <div class="card-body">
+                    <div id="disabled-all" class="card-body disabled-all">
                       <div>
-                        <p class="text-end me-2"><strong>Seleccione día y horario</strong></p>
+                        <p class="text-end me-2"><strong>SELECCIONE DÍA Y HORARIO</strong></p>
                       </div>
-                      <p class="ms-2">Día:</p>
+                      <p class="ms-2">DÍA:</p>
                       <div class="d-flex flex-wrap mx-2">
                         <button class="btn btn-secondary me-2 mb-2" onclick="return activeDay(this);" type="submit">26-06</button>
                         <button class="btn btn-secondary me-2 mb-2" onclick="return activeDay(this);" type="submit">27-06</button>
@@ -88,7 +88,7 @@
                         <button class="btn btn-secondary me-2 mb-2" onclick="return activeDay(this);" type="submit">02-07</button>
                         <button class="btn btn-secondary me-2 mb-2" onclick="return activeDay(this);" type="submit">03-07</button>
                       </div>
-                      <p class="ms-2 mt-3">Hora:</p>
+                      <p class="ms-2 mt-3">HORA:</p>
                       <div class="d-flex flex-wrap mx-2">
                         <button class="btn btn-secondary me-2 mb-2 disabled" type="submit">7:00</button>
                         <button class="btn btn-secondary me-2 mb-2 disabled" type="submit">7:30</button>
@@ -141,6 +141,7 @@
         
         document.getElementById('buscador-especialidades').addEventListener('focus', mostrarEspecialidades);
         document.getElementById('buscador-especialidades').addEventListener('blur', ocultarEspecialidades);
+        document.getElementById('buscador-especialidades').addEventListener('keyup', revisarDeshabilitado);
     </script>
 </body>
 </html>

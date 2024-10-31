@@ -37,6 +37,20 @@ function guardarInfo(){
     localStorage.setItem("documento", documento.value);
 }
 
+function revisarDeshabilitado(){
+    const buscador = document.getElementById("buscador-especialidades");
+    
+    if(buscador.value == ""){        
+        document.getElementById("disabled-all").classList.add("disabled-all");
+        let activeDay = document.getElementsByClassName("active-day");
+        if(activeDay.length > 0) activeDay[0].classList.remove("active-day");
+        let active = document.getElementsByClassName("active");
+        if(active.length > 0) active[0].classList.remove("active");
+    } else {    
+        document.getElementById("disabled-all").classList.remove("disabled-all");   
+    }
+}
+
 function setEspecialidad(htmlElement){
     const buscador = document.getElementById("buscador-especialidades");
     buscador.value = htmlElement.textContent;
@@ -47,6 +61,7 @@ function setEspecialidad(htmlElement){
     document.getElementById("bloque-descripcion").style.display = "block";
     document.getElementById("texto-descriptivo").innerHTML = "<strong>Especialidad: "+htmlElement.textContent+"</strong> <br>"+descripcion;
     checkConfirmar();
+    revisarDeshabilitado();
 }
 
 function filtrar(htmlElement){
@@ -118,9 +133,11 @@ function ocultarEspecialidades(){
 }
 
 function descargarTurno() {
+    let turno = document.getElementById("random-number").textContent;
+    console.log(turno); 
     html2canvas(document.querySelector("#a-imprimir"))
     .then(canvas => {
       console.log("Turno descargado con éxito")
-    return Canvas2Image.saveAsImage(canvas, null, null, "png", "img");
+    return Canvas2Image.saveAsImage(canvas, null, null, "png", "turno#"+turno);
     }, console.log("Error al descargar turno"));
   };
