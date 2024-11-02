@@ -16,6 +16,10 @@ let descripciones = [
     "Diagnóstico y tratamiento de enfermedades de la sangre, como anemias y leucemias, con un enfoque en la mejora de la salud hematológica.",
     "Servicios de transfusión y tratamiento con componentes sanguíneos, asegurando una atención segura y adecuada en terapias hemoterápicas."
 ]
+const user = {
+    username : "44335769",
+    pass : "12345678"
+}
 
 function desbloquearBoton(){
     let nombre = document.getElementById("nombre-completo");
@@ -134,10 +138,27 @@ function ocultarEspecialidades(){
 
 function descargarTurno() {
     let turno = document.getElementById("random-number").textContent;
-    console.log(turno); 
+    
     html2canvas(document.querySelector("#a-imprimir"))
     .then(canvas => {
-      console.log("Turno descargado con éxito")
-    return Canvas2Image.saveAsImage(canvas, null, null, "png", "turno#"+turno);
-    }, console.log("Error al descargar turno"));
-  };
+        console.log("Turno descargado con éxito")
+        return Canvas2Image.saveAsImage(canvas, null, null, "png", "turno#"+turno);
+        },
+        console.log("Error al descargar turno")
+    );
+};
+
+  function iniciarSesion(){
+    let dni = document.getElementById("dni");
+    let pass = document.getElementById("pass");
+    let mensajeError = document.getElementById("mensajeError");
+
+    if((dni.value == user.username) && (pass.value == user.pass)) {
+        document.getElementById("loginOK").click();
+    } else {
+        console.log("error en login")
+        dni.classList.add("input-fail");
+        pass.classList.add("input-fail");
+        mensajeError.classList.remove("d-none");
+    }
+  }
