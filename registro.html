@@ -30,7 +30,7 @@
             </a>
             <ul class="nav nav-pills col-12 col-md-9 py-5 py-md-0 justify-content-center justify-content-md-end">
               <li class="nav-item d-flex align-items-center">
-                <a class="btn btn-primary rounded-1" aria-current="page" href="registro.html">Registrarse</a>
+                <a class="btn btn-primary rounded-1" aria-current="page" href="inicio-sesion.html">Iniciar sesión</a>
               </li>
             </ul>
           </div>
@@ -38,28 +38,47 @@
       </div>
     </nav>
     <section class="container">
-        <div class="col-12 pt-4">
-            <h1 class="mt-1 mb-3 text-center">¡Bienvenido!</h1>
+        <div class="col-12 pt-3">
+            <h1 class="mb-0 text-center">Registrate</h1>
         </div>
         <div class="col-12 d-flex pt-3 pb-5 justify-content-center">
             <div class="card col-10 col-md-7 col-lg-5 col-xl-4">
                 <div class="card-body">
                   <!-- <a class="float-start position-absolute" aria-current="page" href="index.html"><i class="bi bi-arrow-left"></i>&nbsp;&nbsp;Volver al inicio</a> -->
-                  <div class="input m-auto">
-                    <label for="dni">Documento</label><br>
-                    <input class="mt-1 mb-3" id="dni" type="text"><br>
+                  <div class="input m-auto mb-2">
+                    <label for="dni">Nombre</label><br>
+                    <input class="mt-1" id="dni" type="text"><br>
                   </div>  
+                  <div class="input m-auto mb-2">
+                    <label for="pass">Apellido</label><br>
+                    <input class="mt-1" id="pass" type="password">
+                  </div>  
+                  <div class="input m-auto mb-2">
+                    <label for="pass">Fecha de nacimiento</label><br>
+                    <input class="mt-1" id="pass" type="date">
+                  </div>
+                  <div class="input m-auto mb-2">
+                    <label for="pass">Documento: <small>Frente</small></label><br>
+                    <input class="mt-1" id="pass" type="file">
+                  </div>
+                  <div class="input m-auto mb-2">
+                    <label for="pass">Documento: <small>Dorso</small></label><br>
+                    <input class="mt-1" id="pass" type="file">
+                  </div>
                   <div class="input m-auto mb-2">
                     <label for="pass">Contraseña</label><br>
                     <input class="mt-1" id="pass" type="password">
                   </div>
-                  <div id="mensajeError" class="text-center text-muted fs-6 d-none">Las credenciales no corresponden a un usuario activo</div>
+                  <div class="input m-auto mb-2">
+                    <label for="pass">Confirmar contraseña</label><br>
+                    <input class="mt-1" id="pass" type="password">
+                  </div>
                   <div class="text-center">
-                    <a class="btn btn-primary rounded-1 mt-3" aria-current="page" onclick="return iniciarSesion();">Iniciar sesión</a>
+                    <a class="btn btn-primary rounded-1 mt-3" aria-current="page" onclick="return iniciarSesion();">Crear cuenta</a>
                     <br><br>
                     <div class="fs-0-9">
-                      ¿Todavía no estás registrado?&nbsp;
-                      <a class="btn-underline" aria-current="page" href="registro.html">Registrarse<i class="bi bi-arrow-right"></i></a>
+                      ¿Ya estás registrado?&nbsp;
+                      <a class="btn-underline" aria-current="page" href="inicio-sesion.html">Iniciá sesión<i class="bi bi-arrow-right"></i></a>
                     </div>
                   </div>
                 </div>

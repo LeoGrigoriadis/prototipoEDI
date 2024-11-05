@@ -148,3 +148,10 @@ input {
     font-size: 0.8em !important;
     color: firebrick !important;
 }
+
+input[type=file] {
+    background-color: #00adc1;
+    color: white;
+    font-size: 0.8em;
+    border-radius: 2px;
+}
