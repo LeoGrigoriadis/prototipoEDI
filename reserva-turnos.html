@@ -137,7 +137,7 @@
     <script type="text/javascript">
         const nombreVal = localStorage.getItem("nombre");
         const nombreEtiqueta = document.getElementById("nombre-usuario");
-        nombreEtiqueta.innerText = nombreVal; 
+        nombreEtiqueta.innerText = nombreVal == null || nombreVal == "" ? "Leonel" : nombreVal; 
         
         document.getElementById('buscador-especialidades').addEventListener('focus', mostrarEspecialidades);
         document.getElementById('buscador-especialidades').addEventListener('blur', ocultarEspecialidades);

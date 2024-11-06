@@ -14,7 +14,7 @@
 <body> <!--ACÁ ESTA EL BODY, TODO EL CONTENIDO SE ENCUENTRA EN ESTE BLOQUE-->
     <nav class="navbar navbar-expand-md bg-dark sticky-top border-bottom" data-bs-theme="dark"> <!--EN ESTE BLOQUE ESTÁ TODO LO QUE SE VISUALIZA EN LA BARRA DE NAVEGACIÓN, INCLUÍDO EL MODO RESPONSIVE-->
       <div class="container">
-        <a class="navbar-brand d-md-none" href="index.html">
+        <a class="navbar-brand d-md-none" href="paneles.html">
           <img src="https://www.ms.gba.gov.ar/sitios/halende/wp-content/themes/MinisteriodeSaludPBA/img/logoMSPBA.svg" alt="logo provincia buenos aires" width="150px">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas" aria-label="Toggle navigation">
@@ -25,47 +25,32 @@
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <div class="offcanvas-body">
-            <a class="col-12 col-md-3" href="index.html">
+            <a class="col-12 col-md-3" href="paneles.html">
               <img src="https://www.ms.gba.gov.ar/sitios/halende/wp-content/themes/MinisteriodeSaludPBA/img/logoMSPBA.svg" alt="logo provincia buenos aires" width="100%">
             </a>
-            <ul class="nav nav-pills col-12 col-md-9 py-5 py-md-0 justify-content-center justify-content-md-end">
-              <li class="nav-item d-flex align-items-center">
-                <a class="btn btn-primary rounded-1" aria-current="page" href="registro.html">Registrarse</a>
-              </li>
-            </ul>
           </div>
         </div>
       </div>
     </nav>
-    <section class="container">
-        <div class="col-12 pt-4">
-            <h1 class="mt-1 mb-3 text-center">¡Bienvenido!</h1>
+    <main class="container pt-4">
+      <aside class="col-12 col-md-4 col-lg-3 float-md-end border rounded">
+        <h5 class="text-center m-0 py-3">PERSONAL</h5>
+        <a class="border-top d-block py-2 text-center btn-underline" href="">MIS DATOS <i class="bi bi-arrow-right"></i></a>
+        <a class="border-top d-block py-2 text-center btn-underline" href="">MODIFICAR CONTRASEÑA <i class="bi bi-arrow-right"></i></a>
+        <a class="border-top d-block py-2 text-center btn-underline" href="">CONFIGURACIÓN <i class="bi bi-arrow-right"></i></a>
+        <a class="border-top d-block py-2 text-center btn-underline red" href="index.html">SALIR <i class="bi bi-arrow-right"></i></a>
+      </aside>
+      <section class="col-12 col-md-8 col-lg-9 float-md-start">
+        <h1 class="mt-1 mb-4 text-center">¡Bienvenido, Leonel!</h1>
+        <div class="d-flex flex-wrap border rounded me-md-4 bg-white">
+          <a class="d-inline-block col-6 col-lg-4 d-flex align-items-center" href="reserva-turnos.html"><i class="bi bi-calendar-check"></i>Reservar un turno</a>
+          <a class="d-inline-block col-6 col-lg-4 d-flex align-items-center"><i class="bi bi-card-list"></i>Mis turnos</a>
+          <a class="d-inline-block col-6 col-lg-4 d-flex align-items-center"><i class="bi bi-archive"></i>Historia clínica</a>
+          <a class="d-inline-block col-6 col-lg-4 d-flex align-items-center"><i class="bi bi-bell"></i>Notificaciones</a>
+          <a class="d-inline-block col-6 col-lg-4 d-flex align-items-center"><i class="bi bi-info-circle"></i>Guía interna de la app</a>
         </div>
-        <div class="col-12 d-flex pt-3 pb-5 justify-content-center">
-            <div class="card col-10 col-md-7 col-lg-5 col-xl-4">
-                <div class="card-body">
-                  <!-- <a class="float-start position-absolute" aria-current="page" href="index.html"><i class="bi bi-arrow-left"></i>&nbsp;&nbsp;Volver al inicio</a> -->
-                  <div class="input m-auto">
-                    <label for="dni">Documento</label><br>
-                    <input class="mt-1 mb-3" id="dni" type="text"><br>
-                  </div>  
-                  <div class="input m-auto mb-2">
-                    <label for="pass">Contraseña</label><br>
-                    <input class="mt-1" id="pass" type="password">
-                  </div>
-                  <div id="mensajeError" class="text-center text-muted fs-6 d-none">Las credenciales no corresponden a un usuario activo</div>
-                  <div class="text-center">
-                    <a class="btn btn-primary rounded-1 mt-3" aria-current="page" onclick="return iniciarSesion();">Iniciar sesión</a>
-                    <br><br>
-                    <div class="fs-0-9">
-                      ¿Todavía no estás registrado?&nbsp;
-                      <a class="btn-underline" aria-current="page" href="registro.html">Registrarse<i class="bi bi-arrow-right"></i></a>
-                    </div>
-                  </div>
-                </div>
-            </div>
-        </div>
-    </section>
+      </section>
+    </main>
     <footer id="footer">
       <div class="container footer-content">
         <div class="row p-b-3 d-flex flex-column align-items-center">
@@ -82,6 +67,5 @@
         </div>
       </div>
     </footer>
-    <a id="loginOK" href="paneles.html"></a>
 </body>
 </html>

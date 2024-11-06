@@ -122,7 +122,9 @@ small{
     left: 8px;
     color: #047e8b !important;
     transition: left .2s .1s ease-out;
-    
+}
+.red, .red:hover, .red:hover .bi-arrow-right::before {
+    color: firebrick !important;
 }
 
 .fs-0-9 {
@@ -154,4 +156,38 @@ input[type=file] {
     color: white;
     font-size: 0.8em;
     border-radius: 2px;
+}
+
+.bi-calendar-check::before, 
+.bi-card-list::before,
+.bi-archive::before,
+.bi-info-circle::before,
+.bi-bell::before {
+    font-size: 80px;
+    margin: 10px;
+}
+
+.d-inline-block {
+    color: #828281 !important;
+    background-color: white !important;
+    transition: all .2s ease-in;
+    border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
+}
+
+.d-inline-block:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    border: 1px solid #00adc1 !important;
+    background-color: white;
+    transition: all .2s ease-out;
+}
+
+.d-inline-block + .d-inline-block,
+.d-inline-block / .d-inline-block {
+    border-left: solid 1px black;
+
+}
+
+main {
+    min-height: 50vh;
 }
