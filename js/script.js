@@ -24,9 +24,10 @@ const user = {
 function desbloquearBoton(){
     let nombre = document.getElementById("nombre-completo");
     let documento = document.getElementById("nro-documento");
+    let archivo = document.getElementById("dni-file");
     let boton = document.getElementById("btn-busqueda");
     
-    if(nombre.value != "" && documento.value != ""){
+    if(nombre.value != "" && documento.value != "" && archivo.files.length > 0){
         boton.classList.remove('disabled');
     } else {
         boton.classList.add('disabled');
